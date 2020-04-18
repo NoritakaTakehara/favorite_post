@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  # before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index]
   def index
     @posts = Post.all
   end
@@ -41,5 +41,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content,:image).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

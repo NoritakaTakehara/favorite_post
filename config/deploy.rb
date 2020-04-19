@@ -12,7 +12,7 @@ set :rbenv_ruby, '2.4.9' #カリキュラム通りに進めた場合、2.5.1か2
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/Desktop/favorite-ssh-key.pem'],
+                  keys: ['~/.ssh/favorite-ssh-key.pem'],
                   forward_agent: true
 
 # プロセス番号を記載したファイルの場所

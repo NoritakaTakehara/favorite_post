@@ -11,7 +11,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.4.9' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ENV['AWS_ACCESS_KEY_ID'],
+set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/Desktop/favorite-ssh-key.pem'] 
 
 # プロセス番号を記載したファイルの場所
